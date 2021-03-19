@@ -1,0 +1,37 @@
+
+config interface 'loopback'
+	option ifname 'lo'
+	option proto 'static'
+	option ipaddr '127.0.0.1'
+	option netmask '255.0.0.0'
+
+config globals 'globals'
+	option ula_prefix 'fd75:9644:d15d::/48'
+
+config interface 'lan'
+	option type 'bridge'
+	option proto 'static'
+	option ipaddr '192.168.5.1'
+	option netmask '255.255.255.0'
+	option ip6assign '60'
+	option delegate '0'
+	option ifname 'eth0 eth2 eth3'
+
+config interface 'wan'
+	option ifname 'eth1'
+	option proto 'pppoe'
+	option username '18970566921'
+	option password 'a1234567'
+	option delegate '0'
+	option ipv6 '0'
+
+config interface 'docker'
+	option ifname 'docker0'
+	option proto 'none'
+	option auto '0'
+
+config device 'docker0'
+	option type 'bridge'
+	option name 'docker0'
+	list ifname 'docker0'
+
