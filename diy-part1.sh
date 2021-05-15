@@ -14,9 +14,9 @@
 # sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 #
 # 添加源
-# sed -i '$a src-git xsm https://github.com/smzhzy/packages.git' feeds.conf.default
+sed -i '$a src-git xsm https://github.com/smzhzy/packages.git' feeds.conf.default
 #
 #修改默认主机名
-# sed -i 's/OpenWrt/xsm/g' package/base-files/files/bin/config_generate
+sed -i 's/OpenWrt/xsm/g' package/base-files/files/bin/config_generate
 
 exit 0
